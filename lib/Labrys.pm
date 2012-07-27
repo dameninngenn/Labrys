@@ -23,4 +23,17 @@ sub setup_schema {
     }
 }
 
+use Labrys::DB;
+sub db {
+    my ($self) = @_;
+    if (! defined $self->{db}) {
+        my $conf = $self->config->{DBI} or die "missing configuration for 'DBI'";
+        my $dbh = DBI->connect(@{$conf});
+        $self->{db} = Labrys::DB->new(
+            dbh => $dbh,
+        );
+    }
+    return $self->{db};
+}
+
 1;

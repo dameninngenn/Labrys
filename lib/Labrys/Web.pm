@@ -73,4 +73,11 @@ __PACKAGE__->add_trigger(
     },
 );
 
+sub json_error {
+    my ( $c, $code ) = @_;
+    my $res = $c->render_json(+{ error => 1 });
+    $res->code( $code || 500 );
+    return $res;
+}
+
 1;
