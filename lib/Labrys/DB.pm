@@ -5,6 +5,8 @@ use utf8;
 use parent qw(Teng);
 use DateTime;
 
+__PACKAGE__->load_plugin('Count');
+
 sub _before_insert {
     my $self = shift;
     my($table, $args) = @_;
