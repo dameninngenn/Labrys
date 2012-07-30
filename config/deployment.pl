@@ -1,19 +1,13 @@
-use File::Spec;
-use File::Basename qw(dirname);
-my $basedir = File::Spec->rel2abs(File::Spec->catdir(dirname(__FILE__), '..'));
-my $dbpath;
-if ( -d '/home/dotcloud/') {
-    $dbpath = "/home/dotcloud/deployment.db";
-} else {
-    $dbpath = File::Spec->catfile($basedir, 'db', 'deployment.db');
-}
 +{
     'DBI' => [
-        "dbi:SQLite:dbname=$dbpath",
-        '',
+        "dbi:mysql:labrys",
+        'root',
         '',
         +{
-            sqlite_unicode => 1,
-        }
+            mysql_enable_utf8 => 1,
+        },
     ],
+    'gf' => {
+        base_url => 'http://localhost:5125/api/Labrys/',
+    }
 };
