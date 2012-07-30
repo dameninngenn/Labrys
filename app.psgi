@@ -12,10 +12,6 @@ use Plack::Session::Store::DBI;
 use Plack::Session::State::Cookie;
 use DBI;
 
-{
-    my $c = Labrys->new();
-    $c->setup_schema();
-}
 my $db_config = Labrys->config->{DBI} || die "Missing configuration for DBI";
 builder {
     enable 'Plack::Middleware::Static',
