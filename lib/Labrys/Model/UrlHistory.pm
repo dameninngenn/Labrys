@@ -25,7 +25,7 @@ sub count_recent30min_by_type {
     ;
 
     my $target_date = DateTime->now(time_zone => 'local')->add(minutes => -30)->strftime('%Y-%m-%d %H:%M:%S');
-    return $self->count('*', +{
+    return $self->count(+{
         url_history_type => $type,
         created_at       => +{ '>' => $target_date },
     });

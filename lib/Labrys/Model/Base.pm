@@ -25,9 +25,8 @@ sub table_name {
 
 sub count {
     my $self = shift;
-    my $column = shift;
     my $args = shift;
-    return $self->db->count($self->table_name,$column,$args);
+    return $self->db->count($self->table_name,'*',$args);
 }
 
 sub insert {
