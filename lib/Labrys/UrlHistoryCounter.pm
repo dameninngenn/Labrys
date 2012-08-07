@@ -1,4 +1,4 @@
-package Labrys::CUI::UrlHistory;
+package Labrys::UrlHistoryCounter;
 
 use strict;
 use warnings;
@@ -14,7 +14,7 @@ sub new {
     return $self;
 }
 
-sub send_count_to_gf {
+sub send_to_gf {
     my $self = shift;
     my $model = Labrys::Model::UrlHistory->new();
     my $data = +{

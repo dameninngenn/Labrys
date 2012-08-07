@@ -7,8 +7,8 @@ use File::Spec;
 use File::Basename;
 use lib File::Spec->catdir(dirname(__FILE__), '..', 'extlib', 'lib', 'perl5');
 use lib File::Spec->catdir(dirname(__FILE__), '..', 'lib');
-use Labrys::CUI::UrlHistory;
+use Labrys::UrlHistoryCounter;
 
-my $url_history = Labrys::CUI::UrlHistory->new();
-$url_history->send_count_to_gf();
+my $counter = Labrys::UrlHistoryCounter->new();
+$counter->send_to_gf();
 
