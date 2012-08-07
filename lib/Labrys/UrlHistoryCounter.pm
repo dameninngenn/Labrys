@@ -6,7 +6,6 @@ use Labrys;
 use Labrys::GrowthForecastClient;
 use Labrys::Constants qw( :url_history_type );
 use Labrys::Model::UrlHistory;
-use DateTime;
 
 sub new {
     my $class = shift;
