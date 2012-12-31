@@ -35,4 +35,10 @@ sub insert {
     return $self->db->insert($self->table_name,$args);
 }
 
+sub search {
+    my $self = shift;
+    my $args = shift;
+    return $self->db->search($self->table_name,$args);
+}
+
 1;
